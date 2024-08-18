@@ -1,13 +1,13 @@
 {
   "name": "IEPPAL",
   "type": "module",
-  "version": "1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "IEPPAL dev",
+    "dev": "astro dev",
     "start": "IEPPAL dev",
     "build": "IEPPAL build",
-    "preview": "IEPPAL preview"
+    "preview": "IEPPAL preview",
     "astro": "IEPPAL"
   },
   "dependencies": {
