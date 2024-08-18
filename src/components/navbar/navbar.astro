@@ -1,0 +1,94 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const menuitems = [
+  {
+    title: "Next Steps",
+    path: "/IEPPAL-INFO/next", // Add repository name before the path
+  },
+  {
+    title: "Vision",
+    path: "/IEPPAL-INFO/Vision",
+  },
+  {
+    title: "About",
+    path: "/IEPPAL-INFO/about",
+  },
+  {
+    title: "Contact",
+    path: "/IEPPAL-INFO/contact",
+  },
+];
+
+---
+
+<Container>
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="text-lg font-bold text-gray-800">
+          <span class="text-[#5E82C4]">I</span><span class="text-[#C4E09E]">E</span><span class="text-[#D94F34]">P</span>PAL
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-6 h-6 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-6">
+          {menuitems.map((item, index) => (
+            <li key={index} class="mt-2 lg:mt-0">
+              <a
+                href={item.path}
+                class="flex lg:px-4 py-2 items-center text-gray-600 hover:text-gray-900 transition duration-200"
+              >
+                <span>{item.title}</span>
+                {item.badge && (
+                  <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                    New
+                  </span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </MenuItems>
+    </Astronav>
+    <div class="hidden lg:flex items-center gap-4">
+      <!-- Additional items like buttons or user profile links can go here -->
+    </div>
+  </header>
+</Container>
+
+<style>
+  /* Default (Desktop) styles */
+  a {
+    transition: color 0.2s ease-in-out;
+  }
+
+  a:hover {
+    color: #1d4ed8; /* Hover color for links */
+  }
+
+  /* Mobile (max-width: 1023px) specific styles */
+  @media (max-width: 1023px) {
+    header {
+      background-color: #f8fafc; /* Soft background color to stand out against the page */
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .menuitems {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+</style>

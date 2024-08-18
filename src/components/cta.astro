@@ -1,0 +1,42 @@
+---
+import Link from "./ui/link.astro";
+---
+
+<div class="bg-black p-8 md:p-16 mt-20 mx-auto max-w-5xl rounded-lg text-center">
+  <div class="grid md:grid-cols-2 gap-12 md:gap-8 items-center">
+    <div class="space-y-6">
+      <h2 class="text-white text-3xl md:text-4xl font-bold">
+        Where are we now?
+      </h2>
+      <Link href="/IEPPAL-INFO/Vision/" style="inverted" class="interactive-link">See our timeline</Link>
+    </div>
+    <div class="space-y-6 md:border-l md:border-white md:pl-8">
+      <h2 class="text-white text-3xl md:text-4xl font-bold">
+        Want to contribute?
+      </h2>
+      <div class="relative inline-block">
+        <img src="/6.svg" alt="Sparkle" class="absolute -top-6 -right-6 md:-top-7 md:-right-7 w-10 h-10 md:w-12 md:h-12" />
+        <Link href="/IEPPAL-INFO/contact/" style="inverted" class="interactive-link">Get involved here</Link>
+        <img src="/7.svg" alt="Sparkle" class="absolute -bottom-8 -left-8 w-10 h-10 md:w-12 md:h-12 transform rotate-[350deg]" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .interactive-link {
+    display: inline-block;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 25px 0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .interactive-link:hover {
+    background-color: white;
+    color: black;
+  }
+</style>

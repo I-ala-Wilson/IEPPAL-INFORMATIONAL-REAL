@@ -1,0 +1,123 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import { Image } from 'astro:assets';
+import successGrowthIcon from '../assets/ICON2.svg'; // Corrected path
+import handGestureIcon from '../assets/ICON3.svg'; // Corrected path
+import collaborateIcon from '../assets/COLLAb.svg'; // Corrected path
+import starIcon from '../assets/star.svg'; // Corrected path
+import keyIcon from '../assets/key.svg'; // Corrected path
+
+const mainFeatures = [
+  {
+    title: "Progress Tracking and Reporting",
+    description: "IEPPAL will provide automated, customizable progress reports that are generated based on student data.",
+    icon: successGrowthIcon,
+  },
+  {
+    title: "Built For Your Convenience",
+    description: "IEPPAL's digital infrastructure will be tailored for an intuitive and pragmatic feel, based on the opinions of 20+ industry members.",
+    icon: handGestureIcon,
+  },
+  {
+    title: "Leveraging AI in Goal-Setting",
+    description: "IEPPAL will understand a student's needs and help form personalized goals to best help them grow.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Broad Integration",
+    description: "IEPPAL will integrate with popular educational softwares such as Veracross and Google Classroom for ease of use and application in a school setting.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Seamless Collaboration",
+    description: "IEPPAL will be built to prioritise the ease of collaboration between all relevant stakeholders, including teachers, parents, and learning support case managers.",
+    icon: collaborateIcon,
+    iconSize: { width: 28, height: 28 }, // Specific size for the collaborate icon
+  },
+  {
+    title: "Assisted Accountability",
+    description: "IEPPAL will help you keep track of what you need to do and when, ensuring your students can be best supported.",
+    icon: "bx:bxs-user",
+  },
+];
+
+const additionalFeatures = [
+  {
+    title: "Synthesizing Key Information",
+    description: "IEPPAL will synthesize key information on students' self-efficacy, parent input, teacher feedback, diagnosis, along with several other measures that paint a holistic picture.",
+    icon: keyIcon,
+  },
+  {
+    title: "Building Confident Self-Advocates",
+    description: "IEPPAL will provide a creative medium where students can create video recordings and other types of journaling that track growth over time.",
+    icon: starIcon,
+  },
+];
+---
+
+<div class="container mx-auto px-4 py-8">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold lg:tracking-tight mb-4">
+      Your best pal in learning support
+    </h2>
+    <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+      IEPPAL comes batteries included. It takes the best parts of state-of-the-art tools and adds its own innovations.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+    {mainFeatures.map((item) => (
+      <div class="flex flex-col md:flex-row gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full p-2 w-12 h-12 shrink-0 flex items-center justify-center">
+          {typeof item.icon === 'string' ? (
+            <Icon class="text-white w-6 h-6" name={item.icon} />
+          ) : (
+            <Image
+              src={item.icon}
+              alt={item.title}
+              width={item.iconSize?.width || 24}
+              height={item.iconSize?.height || 24}
+              class="text-white"
+            />
+          )}
+        </div>
+        <div>
+          <h3 class="font-semibold text-xl mb-2">{item.title}</h3>
+          <p class="text-slate-500 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-16 md:mt-24 lg:mt-32">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-4xl mx-auto">
+      {additionalFeatures.map((item) => (
+        <div class="flex flex-col md:flex-row gap-4 items-start">
+          <div class="mt-1 bg-black rounded-full p-2 w-12 h-12 shrink-0 flex items-center justify-center">
+            <Image
+              src={item.icon}
+              alt={item.title}
+              width={24}
+              height={24}
+              class="text-white"
+            />
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl mb-2">{item.title}</h3>
+            <p class="text-slate-500 leading-relaxed">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 640px) {
+    .flex-col {
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>

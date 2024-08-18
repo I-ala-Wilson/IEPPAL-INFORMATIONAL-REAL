@@ -1,0 +1,76 @@
+---
+import Contactform from "@components/contactform.astro";
+import Layout from "../layouts/Layout.astro"; // Adjusted path for GitHub Pages
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Contact">
+  <Container>
+    <div class="fade-in-section">
+      <Sectionhead>
+        <Fragment slot="title">Contact</Fragment>
+        <Fragment slot="desc">We'd love to hear from you.</Fragment>
+      </Sectionhead>
+
+      <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+        <div class="fade-in-card">
+          <h2 class="font-medium text-2xl text-gray-800">Contact IEPPAL</h2>
+          <p class="text-lg leading-relaxed text-slate-500 mt-3">
+            Want to help us along the way? Feel free to reach out to us here.
+          </p>
+          <div class="mt-5">
+            <div class="flex items-center mt-2 space-x-2 text-gray-600">
+              <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
+              <span>ieppalinfo@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in-card" style="animation-delay: 0.2s;">
+          <Contactform />
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-section {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .fade-in-card {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-card, .fade-in-section').forEach((el) => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  });
+</script>

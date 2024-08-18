@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import docIcon from '../assets/DOC-FIXED.svg'; // Updated relative path
+import megaphoneIcon from '../assets/MEGAPHONE.svg'; // Updated relative path
+---
+
+<section class="py-8 md:py-16 bg-gray-100 mb-16 md:mb-32 relative">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+      <!-- Left Text Block -->
+      <div class="pr-0 md:pr-8 z-10 order-2 md:order-1">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6">What's an IEP?</h2>
+        <p class="text-base md:text-lg">
+          An Individualized Education Plan (IEP) is a vital document in special education that outlines students' learning needs, services, and progress measures, ensuring personalized support to bridge the gap between their unique requirements and academic goals.
+        </p>
+      </div>
+
+      <!-- Right Image Block (Document Icon) -->
+      <div class="flex justify-center items-center z-10 order-1 md:order-2">
+        <Image 
+          src={docIcon} 
+          alt="Document Icon" 
+          width={300} 
+          height={300} 
+          class="mx-auto transform rotate-15 w-[200px] h-[200px] md:w-[300px] md:h-[300px] md:translate-x-[-30px]" 
+        />
+      </div>
+
+      <!-- Left Image Block (Megaphone Icon) -->
+      <div class="flex justify-center items-center z-10 order-3">
+        <Image 
+          src={megaphoneIcon} 
+          alt="Megaphone Icon" 
+          width={300} 
+          height={300} 
+          class="mx-auto transform -rotate-15 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" 
+        />
+      </div>
+
+      <!-- Right Text Block -->
+      <div class="pl-0 md:pl-8 pr-0 md:pr-12 z-10 order-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">What's the issue here?</h2>
+        <p class="text-base md:text-lg">
+          Despite their importance, IEPs face challenges like inconsistent implementation and execution across schools furthering the difficulty of supporting students to become confident self-advocates; moreover, limited collaboration between educators, parents, and specialists often leads to suboptimal support for students — IEPPAL is the confidence builder students need.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .rotate-15 {
+    transform: rotate(15deg);
+  }
+  .-rotate-15 {
+    transform: rotate(-15deg);
+  }
+  @media (min-width: 768px) {
+    .md\:ml-8 {
+      margin-left: 10rem;
+    }
+    .md\:mr-8 {
+      margin-right: 6rem;
+    }
+    .md\:translate-x-[-30px] {
+      transform: translateX(-30px) rotate(15deg);
+    }
+  }
+  @media (max-width: 767px) {
+    .grid {
+      display: flex;
+      flex-direction: column;
+    }
+    .order-1 { order: 1; }
+    .order-2 { order: 2; }
+    .order-3 { order: 3; }
+    .order-4 { order: 4; }
+  }
+</style>

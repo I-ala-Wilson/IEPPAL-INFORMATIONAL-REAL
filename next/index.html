@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.2"><!-- <link rel="preload" as="image" href={src} alt="Hero" /> --><title>Where we are, where we're going, and where we want to be | Astroship</title><link rel="canonical" href="https://astroship.web3templates.com/next/"><meta name="description" content="Astroship is a starter website template for Astro built with TailwindCSS."><meta name="robots" content="index, follow"><meta property="og:title" content="Astroship - Starter Template for Astro"><meta property="og:type" content="website"><meta property="og:image" content="https://astroship.web3templates.com/opengraph.jpg"><meta property="og:url" content="https://astroship.web3templates.com/next/"><meta property="og:image:url" content="https://astroship.web3templates.com/opengraph.jpg"><meta property="og:image:alt" content="Astroship Homepage Screenshot"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@web3templates"><meta name="twitter:creator" content="@surjithctly"><link rel="stylesheet" href="/_astro/Vision.CXEDniZR.css">
+<style>@keyframes fadeIn{0%{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.fade-in-section[data-astro-cid-vvwtqsb5]{animation:fadeIn 1s ease-out forwards;opacity:0}.highlight[data-astro-cid-vvwtqsb5]{background-color:#c1e08f;padding:2px 4px;border-radius:4px}
+</style>
+<link rel="stylesheet" href="/_astro/next.DDkcfXDD.css"><script type="module">document.addEventListener("DOMContentLoaded",()=>{const n=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&(t.target.style.animationPlayState="running")})},{threshold:.1});document.querySelectorAll(".fade-in-section").forEach(e=>{e.style.animationPlayState="paused",n.observe(e)})});
+</script></head> <body> <div class="max-w-screen-xl mx-auto px-5">  <header class="flex flex-col lg:flex-row justify-between items-center my-5" data-astro-cid-57m2wulp>  <div class="flex w-full lg:w-auto items-center justify-between" data-astro-cid-57m2wulp> <a href="/" class="text-lg font-bold text-gray-800" data-astro-cid-57m2wulp> <span class="text-[#5E82C4]" data-astro-cid-57m2wulp>I</span><span class="text-[#C4E09E]" data-astro-cid-57m2wulp>E</span><span class="text-[#D94F34]" data-astro-cid-57m2wulp>P</span>PAL
+</a> <div class="block lg:hidden" data-astro-cid-57m2wulp> <button id="astronav-menu" aria-label="Toggle Menu">  <svg fill="currentColor" class="w-6 h-6 text-gray-800" width="24" height="24" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg" data-astro-cid-57m2wulp> <title>Toggle Menu</title> <path class="astronav-close-icon astronav-toggle hidden" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"></path> <path class="astronav-open-icon astronav-toggle" fill-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path> </svg>  </button> </div> </div> <nav class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0" data-astro-cid-57m2wulp>  <ul class="flex flex-col lg:flex-row lg:gap-6" data-astro-cid-57m2wulp> <li key="0" class="mt-2 lg:mt-0" data-astro-cid-57m2wulp> <a href="/next" class="flex lg:px-4 py-2 items-center text-gray-600 hover:text-gray-900 transition duration-200" data-astro-cid-57m2wulp> <span data-astro-cid-57m2wulp>Next Steps</span>  </a> </li><li key="1" class="mt-2 lg:mt-0" data-astro-cid-57m2wulp> <a href="/Vision" class="flex lg:px-4 py-2 items-center text-gray-600 hover:text-gray-900 transition duration-200" data-astro-cid-57m2wulp> <span data-astro-cid-57m2wulp>Vision</span>  </a> </li><li key="2" class="mt-2 lg:mt-0" data-astro-cid-57m2wulp> <a href="/about" class="flex lg:px-4 py-2 items-center text-gray-600 hover:text-gray-900 transition duration-200" data-astro-cid-57m2wulp> <span data-astro-cid-57m2wulp>About</span>  </a> </li><li key="3" class="mt-2 lg:mt-0" data-astro-cid-57m2wulp> <a href="/contact" class="flex lg:px-4 py-2 items-center text-gray-600 hover:text-gray-900 transition duration-200" data-astro-cid-57m2wulp> <span data-astro-cid-57m2wulp>Contact</span>  </a> </li> </ul>  </nav>  <script>(function(){const closeOnClick = false;
+
+["DOMContentLoaded", "astro:after-swap"].forEach((event) => {
+  document.addEventListener(event, addListeners);
+});
+
+// Function to clone and replace elements
+function cloneAndReplace(element) {
+  const clone = element.cloneNode(true);
+  element.parentNode.replaceChild(clone, element);
+}
+
+function addListeners() {
+  // Clean up existing listeners
+  const oldMenuButton = document.getElementById("astronav-menu");
+  if (oldMenuButton) {
+    cloneAndReplace(oldMenuButton);
+  }
+
+  const oldDropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  oldDropdownMenus.forEach((menu) => {
+    cloneAndReplace(menu);
+  });
+
+  // Mobile nav toggle
+  const menuButton = document.getElementById("astronav-menu");
+  menuButton && menuButton.addEventListener("click", toggleMobileNav);
+
+  // Dropdown menus
+  const dropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  dropdownMenus.forEach((menu) => {
+    const button = menu.querySelector("button");
+    button &&
+      button.addEventListener("click", (event) =>
+        toggleDropdownMenu(event, menu, dropdownMenus)
+      );
+
+    // Handle Submenu Dropdowns
+    const dropDownSubmenus = menu.querySelectorAll(
+      ".astronav-dropdown-submenu"
+    );
+
+    dropDownSubmenus.forEach((submenu) => {
+      const submenuButton = submenu.querySelector("button");
+      submenuButton &&
+        submenuButton.addEventListener("click", (event) => {
+          event.stopImmediatePropagation();
+          toggleSubmenuDropdown(event, submenu);
+        });
+    });
+  });
+
+  // Clicking away from dropdown will remove the dropdown class
+  document.addEventListener("click", closeAllDropdowns);
+
+  if (closeOnClick) {
+    handleCloseOnClick();
+  }
+}
+
+function toggleMobileNav() {
+  [...document.querySelectorAll(".astronav-toggle")].forEach((el) => {
+    el.classList.toggle("hidden");
+  });
+}
+
+function toggleDropdownMenu(event, menu, dropdownMenus) {
+  toggleMenu(menu);
+
+  // Close one dropdown when selecting another
+  Array.from(dropdownMenus)
+    .filter((el) => el !== menu && !menu.contains(el))
+    .forEach(closeMenu);
+
+  event.stopPropagation();
+}
+
+function toggleSubmenuDropdown(event, submenu) {
+  event.stopPropagation();
+  toggleMenu(submenu);
+
+  // Close sibling submenus at the same nesting level
+  const siblingSubmenus = submenu
+    .closest(".astronav-dropdown")
+    .querySelectorAll(".astronav-dropdown-submenu");
+  Array.from(siblingSubmenus)
+    .filter((el) => el !== submenu && !submenu.contains(el))
+    .forEach(closeMenu);
+}
+
+function closeAllDropdowns(event) {
+  const dropdownMenus = document.querySelectorAll(".dropdown-toggle");
+  const dropdownParent = document.querySelectorAll(
+    ".astronav-dropdown, .astronav-dropdown-submenu"
+  );
+  const isButtonInsideDropdown = [
+    ...document.querySelectorAll(
+      ".astronav-dropdown button, .astronav-dropdown-submenu button, #astronav-menu"
+    ),
+  ].some((button) => button.contains(event.target));
+  if (!isButtonInsideDropdown) {
+    dropdownMenus.forEach((d) => {
+      // console.log("I ran", d);
+      // if (!d.contains(event.target)) {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.classList.add("hidden");
+      // }
+    });
+    dropdownParent.forEach((d) => {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.setAttribute("aria-expanded", "false");
+    });
+  }
+}
+
+function toggleMenu(menu) {
+  menu.classList.toggle("open");
+  const expanded = menu.getAttribute("aria-expanded") === "true";
+  menu.setAttribute("aria-expanded", expanded ? "false" : "true");
+  menu.hasAttribute("open")
+    ? menu.removeAttribute("open")
+    : menu.setAttribute("open", "");
+
+  const dropdownToggle = menu.querySelector(".dropdown-toggle");
+  const dropdownExpanded = dropdownToggle.getAttribute("aria-expanded");
+  dropdownToggle.classList.toggle("hidden");
+  dropdownToggle.setAttribute(
+    "aria-expanded",
+    dropdownExpanded === "true" ? "false" : "true"
+  );
+}
+
+function closeMenu(menu) {
+  // console.log("closing", menu);
+  menu.classList.remove("open");
+  menu.removeAttribute("open");
+  menu.setAttribute("aria-expanded", "false");
+  const dropdownToggles = menu.querySelectorAll(".dropdown-toggle");
+  dropdownToggles.forEach((toggle) => {
+    toggle.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
+  });
+}
+
+function handleCloseOnClick() {
+  const navMenuItems = document.querySelector(".astronav-items");
+  const navToggle = document.getElementById("astronav-menu");
+  const navLink = navMenuItems && navMenuItems.querySelectorAll("a");
+
+  const MenuIcons = navToggle.querySelectorAll(".astronav-toggle");
+
+  navLink &&
+    navLink.forEach((item) => {
+      item.addEventListener("click", () => {
+        navMenuItems?.classList.add("hidden");
+        MenuIcons.forEach((el) => {
+          el.classList.toggle("hidden");
+        });
+      });
+    });
+}
+})();</script> <div class="hidden lg:flex items-center gap-4" data-astro-cid-57m2wulp> <!-- Additional items like buttons or user profile links can go here --> </div> </header>  </div>   <div class="max-w-screen-xl mx-auto px-5">  <div class="mx-auto max-w-[735px] mt-14"> <span class="text-blue-400 uppercase tracking-wider text-sm font-medium"> Next Steps </span> <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight text-left"> Where we are, where we&#39;re going, and where we want to be </h1> <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap text-left"> <span class="text-gray-400"> IEPPAL Team </span> <span class="text-gray-400">•</span> <time class="text-gray-400" datetime="2024-08-17"> Aug 17, 2024 </time>  </div> </div> <div class="mx-auto prose prose-lg mt-6 max-w-[735px]">  <div class="fade-in-section" data-astro-cid-vvwtqsb5> <p data-astro-cid-vvwtqsb5>
+Currently Ian and Ansel are beginning their mandatory National Service with the Singapore Army, while Rahul will begin his major in engineering at Imperial College London. Despite this, the team is committed to the long-term success of the project and invites all professionals from the global learning support community to engage with us through our contact page.
+</p> <p class="mt-4" data-astro-cid-vvwtqsb5> <span class="highlight" data-astro-cid-vvwtqsb5>We are currently interviewing teachers to understand the pain points they face with their IEP systems and other support systems for students with special learning needs.</span> In the conversations we've had thus far we've learned that teachers desire a balance between using IEPs to drive data-informed learning and building meaningful relationships that empower students to become self-advocates. This approach ensures that while academic progress is tracked, personal growth and independence are also nurtured.
+</p> <p class="mt-4" data-astro-cid-vvwtqsb5>
+Despite all we've learned so far we know we've only just scratched the surface.
+</p> <p class="mt-4" data-astro-cid-vvwtqsb5>
+We encourage more teachers to share their experiences and insights to help us create a platform that truly supports both educational and personal development for students with special needs.
+</p> </div>  </div> <div class="text-center mt-8 flex justify-center gap-4"> <a href="/contact" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800  border-2 border-transparent flex gap-3 items-center justify-center bg-black text-white px-4 py-2 rounded-md"> <img src="/_astro/Handshake.jORHAZiG.png" alt="Handshake" class="w-5 h-5">
+Get Involved
+ </a> <a href="/" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800  border-2 border-transparent flex gap-3 items-center justify-center bg-black text-white px-4 py-2 rounded-md"> <img src="/_astro/Home.Dcp5m0uB.png" alt="Home" class="w-5 h-5">
+Back to Home
+ </a> </div>  </div>  <footer class="my-20"> <p class="text-center text-sm text-slate-500">
+Made by IEPPAL, 2024.
+</p> </footer>  </body> </html>  

@@ -1,0 +1,61 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import '@fontsource-variable/bricolage-grotesque';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const makeTitle = `IEPPAL | ${title}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/Favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{makeTitle}</title>
+    
+    <SEO
+      title={makeTitle}
+      description="IEPPAL revolutionizes learning support by centralizing IEPs into one intuitive platform."
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@YourTwitterHandle",
+        site: "@IEPPAL",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `IEPPAL - Learning Support Done Better`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "IEPPAL Homepage Screenshot",
+        },
+      }}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>

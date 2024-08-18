@@ -1,0 +1,105 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "../assets/hero.png"; // Updated relative path
+import handshakeIcon from "../assets/Handshake.png"; // Updated relative path
+import personIcon from "../assets/Us.png"; // Updated relative path
+import Link from "../components/ui/link.astro"; // Updated relative path
+import IepExplanation from "../components/IepExplanation.astro"; // Updated relative path
+---
+
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/assets/Favicon.svg" />
+  </head>
+
+  <body>
+    <main class="grid lg:grid-cols-2 place-items-center pt-8 pb-0">
+      <div class="order-3 lg:order-1 py-6 fade-in-section hero-image" style="animation-delay: 0.2s;">
+        <Picture
+          src={heroImage}
+          alt="Astronaut in the air"
+          widths={[200, 400, 600]}
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+          format="avif"
+        />
+      </div>
+      <div class="order-1 lg:order-2 fade-in-section">
+        <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+          Learning Support Done Better With IEPPAL
+        </h1>
+        <p class="text-lg mt-4 text-slate-600 max-w-xl">
+          At IEPPAL our main focus is on nurturing students into confident self-advocates with the help of teachers and parents.
+        </p>
+
+        <p class="text-lg mt-4 text-slate-600 max-w-xl">
+          IEPPAL intends to revolutionize learning support by centralizing IEPs into one intuitive platform. More importantly, IEPPAL gives space for educators and students to form authentic relationships and for students to recognize their achievements over time.
+        </p>
+        <div class="order-2 mt-6 flex flex-col sm:flex-row gap-3 button-container">
+          <Link href="/IEPPAL-INFO/contact/" class="flex gap-3 items-center justify-center bg-black text-white px-4 py-2 rounded-md" rel="noopener">
+            <img src={handshakeIcon.src} alt="Handshake" class="w-5 h-5" />
+            Get Involved
+          </Link>
+          <Link size="lg" style="outline" rel="noopener" href="/IEPPAL-INFO/about/" class="flex gap-3 items-center justify-center">
+            <img src={personIcon.src} alt="Person" class="w-5 h-5" />
+            Who are we?
+          </Link>
+        </div>
+      </div>
+    </main>
+
+    <div class="fade-in-section">
+      <IepExplanation />
+    </div>
+  </body>
+</html>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-section {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  @media (max-width: 1023px) {
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-image {
+      order: 2; /* This order places the hero image below the text but above the buttons */
+    }
+
+    .button-container {
+      order: 3; /* This ensures the buttons are below the hero image */
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach((el) => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  });
+</script>

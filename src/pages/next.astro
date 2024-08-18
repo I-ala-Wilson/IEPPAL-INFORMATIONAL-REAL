@@ -1,0 +1,68 @@
+---
+import CustomLayout from "../layouts/CustomLayout.astro";
+
+const frontmatter = {
+  title: "Where we are, where we're going, and where we want to be",
+  category: "Next Steps",
+  author: "IEPPAL Team",
+  publishDate: "2024-08-17",
+};
+---
+
+<CustomLayout frontmatter={frontmatter}>
+  <div class="fade-in-section">
+    <p>
+      Currently Ian and Ansel are beginning their mandatory National Service with the Singapore Army, while Rahul will begin his major in engineering at Imperial College London. Despite this, the team is committed to the long-term success of the project and invites all professionals from the global learning support community to engage with us through our contact page. 
+    </p>
+    <p class="mt-4">
+      <span class="highlight">We are currently interviewing teachers to understand the pain points they face with their IEP systems and other support systems for students with special learning needs.</span> In the conversations we've had thus far we've learned that teachers desire a balance between using IEPs to drive data-informed learning and building meaningful relationships that empower students to become self-advocates. This approach ensures that while academic progress is tracked, personal growth and independence are also nurtured.
+    </p>
+    <p class="mt-4">
+      Despite all we've learned so far we know we've only just scratched the surface.
+    </p>
+    <p class="mt-4">
+      We encourage more teachers to share their experiences and insights to help us create a platform that truly supports both educational and personal development for students with special needs.
+    </p>
+  </div>
+</CustomLayout>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-section {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .highlight {
+    background-color: #c1e08f;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach((el) => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  });
+</script>
