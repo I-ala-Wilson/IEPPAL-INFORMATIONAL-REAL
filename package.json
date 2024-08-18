@@ -4,11 +4,11 @@
   "version": "1.0",
   "private": true,
   "scripts": {
-    "dev": "IEPPAL dev",
-    "start": "IEPPAL dev",
-    "build": "IEPPAL build",
-    "preview": "IEPPAL preview"
-    "astro": "IEPPAL"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.3",
