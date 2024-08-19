@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "IEPPAL dev",
-    "build": "IEPPAL build",
-    "preview": "IEPPAL preview",
-    "astro": "IEPPAL"
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.3",
