@@ -173,7 +173,7 @@
                             .closest(".astronav-dropdown")
                             .querySelectorAll(".astronav-dropdown-submenu");
                         Array.from(siblingSubmenus)
-                            .filter((el) => el !== submenu && !submenu contains(el))
+                            .filter((el) => el !== submenu && !submenu.contains(el))
                             .forEach(closeMenu);
                     }
 
@@ -182,7 +182,7 @@
                         const dropdownParent = document.querySelectorAll(".astronav-dropdown, .astronav-dropdown-submenu");
                         const isButtonInsideDropdown = [
                             ...document.querySelectorAll(".astronav-dropdown button, .astronav-dropdown-submenu button, #astronav-menu"),
-                        ].some((button) => button contains(event.target));
+                        ].some((button) => button.contains(event.target));
                         if (!isButtonInsideDropdown) {
                             dropdownMenus.forEach((d) => {
                                 d.classList.remove("open");
@@ -201,14 +201,14 @@
                         menu.classList.toggle("open");
                         const expanded = menu.getAttribute("aria-expanded") === "true";
                         menu.setAttribute("aria-expanded", expanded ? "false" : "true");
-                        menu hasAttribute("open")
-                            ? menu removeAttribute("open")
-                            : menu setAttribute("open", "");
+                        menu.hasAttribute("open")
+                            ? menu.removeAttribute("open"):
+                              menu.setAttribute("open", "");
 
                         const dropdownToggle = menu.querySelector(".dropdown-toggle");
-                        const dropdownExpanded = dropdownToggle getAttribute("aria-expanded");
-                        dropdownToggle classList toggle("hidden");
-                        dropdownToggle setAttribute(
+                        const dropdownExpanded = dropdownToggle.getAttribute("aria-expanded");
+                        dropdownToggle.classList.toggle("hidden");
+                        dropdownToggle.setAttribute(
                             "aria-expanded",
                             dropdownExpanded === "true" ? "false" : "true"
                         );

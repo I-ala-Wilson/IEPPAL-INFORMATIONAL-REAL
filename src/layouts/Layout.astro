@@ -12,6 +12,7 @@ export interface Props {
 const { title } = Astro.props;
 
 const makeTitle = `IEPPAL | ${title}`;
+const canonicalURL = "IEPPAL-INFO"
 ---
 
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ const makeTitle = `IEPPAL | ${title}`;
           url: canonicalURL,
           type: "website",
           title: `IEPPAL - Learning Support Done Better`,
-          image: resolvedImageWithDomain,
+          image: "resolvedImageWithDomain",
         },
         image: {
           alt: "IEPPAL Homepage Screenshot",
