@@ -10,10 +10,13 @@ export default defineConfig({
   // Update this to your GitHub Pages URL
   base: '/IEPPAL-INFO',
   // Add this if your repo name is not username.github.io
+  output: "static",
+  outdir: "./docs",
   vite: {
     build: {
       assetsInlineLimit: 0
     }
   },
-  integrations: [mdx(), tailwind(), sitemap(), icon()]
+  integrations: [mdx(), tailwind(), sitemap(), icon()],
+  assets: "astro"
 });
